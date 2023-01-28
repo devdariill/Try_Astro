@@ -2,13 +2,42 @@
 import Card from '../components/Card.astro'
 ---
 
-<h1>Services</h1>
-<p>
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi obcaecati
-  nesciunt, eaque ducimus libero enim repellendus temporibus aliquid cupiditate
-  velit maiores placeat molestiae reprehenderit consequatur vel quia voluptates.
-  Corrupti, labore facere consequuntur exercitationem, recusandae deleniti
-  maxime atque quos eligendi unde laudantium. Hic minima iure rem deleniti
-  doloremque voluptatem odio enim.
-</p>
-<Card />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+  </head>
+  <body>
+    <h1>Services</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi
+      obcaecati nesciunt, eaque ducimus libero enim repellendus temporibus
+      aliquid cupiditate velit maiores placeat molestiae reprehenderit
+      consequatur vel quia voluptates. Corrupti, labore facere consequuntur
+      exercitationem, recusandae deleniti maxime atque quos eligendi unde
+      laudantium. Hic minima iure rem deleniti doloremque voluptatem odio enim.
+    </p>
+    <Card title="Hola Title" content="Diseño Content" />
+    <Card title="Title not ?" />
+  </body>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      /* standar style */
+      font-family: sans-serif;
+      font-size: 1.2em;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: white;
+      /* custom style */
+    }
+  </style>
+</html>

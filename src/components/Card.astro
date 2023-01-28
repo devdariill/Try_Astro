@@ -1,4 +1,23 @@
-<div>
-  <h2>Mi Tarjeta</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, soluta.</p>
+---
+interface Props {
+  title: string
+  content?: string
+}
+const { title = 'Title', content = 'Content' } = Astro.props
+---
+
+<div class="card">
+  <h2>{title}</h2>
+  <p>{content}</p>
 </div>
+<style>
+  .card {
+    background: #202020;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26), 0 25px 50px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30rem;
+    margin: 2rem auto;
+  }
+</style>
