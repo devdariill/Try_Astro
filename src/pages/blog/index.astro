@@ -1,0 +1,39 @@
+---
+import Layout from '../../components/Layout.astro'
+const posts = await Astro.glob('./posts/*.md')
+// Astro.glob('./posts/*.md', { cwd: import.meta.url })
+---
+
+<!-- https://docs.astro.build/en/guides/markdown-content/ -->
+<Layout pageTitle="Blog">
+  <h1>Blog</h1>
+  <div>
+    <a href="/blog/posts/notas-28-01-2022">Notas</a>
+    <a href="/blog/posts/tutorial-28-01-2022">Tutorial</a>
+    {
+      posts.map((post) => {
+        return (
+          <a class="link" href={post.url}>
+            {post.frontmatter.title}
+          </a>
+        )
+      })
+    }
+  </div>
+  <style>
+    .link {
+      margin: 10px 0;
+      display: block;
+      background-color: #202020;
+      padding: 10px 20px;
+      font-weight: bold;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    div {
+      gap: 10px;
+      text-align: center;
+    }
+  </style>
+</Layout>
