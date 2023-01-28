@@ -4,13 +4,13 @@ const title = 'Mi proyecto de Astro'
 const color = 'danger'
 const hobbies = ['Programar', 'Jugar', 'Dormir']
 const isActive = false
+import Layout from '../components/Layout.astro'
 ---
 
-<script>
-  console.log('Hola Client')
-</script>
-
-<body>
+<Layout>
+  <script>
+    console.log('Hola Client')
+  </script>
   {
     hobbies.map((hobbie) => {
       return <h3 class="warning">{hobbie}</h3>
@@ -18,24 +18,9 @@ const isActive = false
   }
   <h1 class="title">{title}</h1>
   <h3 class={color}>{isActive ? 'User On' : 'User Off'}</h3>
-</body>
+</Layout>
 
 <style>
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* standar style */
-    font-family: sans-serif;
-    font-size: 1.2em;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: white;
-    /* custom style */
-  }
   .title {
     color: #1ab4fe;
   }
