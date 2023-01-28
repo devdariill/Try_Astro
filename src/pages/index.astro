@@ -1,0 +1,32 @@
+---
+console.log('Hola Server')
+const title = 'Mi proyecto de Astro'
+const color = 'danger'
+---
+
+<script>
+  console.log('Hola Client')
+</script>
+<body>
+  <h1 class="title">{title}</h1>
+  <h2 class={color}>Danger</h2>
+</body>
+
+<style>
+  body {
+    /* standar style */
+    font-family: sans-serif;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+    /* custom style */
+  }
+  .title {
+    color: #1ab4fe;
+  }
+  .danger {
+    color: red;
+  }
+</style>
