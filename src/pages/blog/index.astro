@@ -1,4 +1,5 @@
 ---
+import logoImage from '../../Images/Logo_Hermes.webp'
 import Layout from '../../components/Layout.astro'
 const posts = await Astro.glob('./posts/*.md')
 // Astro.glob('./posts/*.md', { cwd: import.meta.url })
@@ -7,18 +8,34 @@ const posts = await Astro.glob('./posts/*.md')
 <!-- https://docs.astro.build/en/guides/markdown-content/ -->
 <Layout pageTitle="Blog">
   <h1>Blog</h1>
-  <div>
-    <a href="/blog/posts/notas-28-01-2022">Notas</a>
-    <a href="/blog/posts/tutorial-28-01-2022">Tutorial</a>
-    {
-      posts.map((post) => {
-        return (
-          <a class="link" href={post.url}>
-            {post.frontmatter.title}
-          </a>
-        )
-      })
-    }
+  <div style="display: flex;">
+    <div style="gap: 10px; text-align: center; margin:auto;">
+      <a href="/blog/posts/notas-28-01-2022">Notas</a>
+      <a href="/blog/posts/tutorial-28-01-2022">Tutorial</a>
+      {
+        posts.map((post) => {
+          return (
+            <a class="link" href={post.url}>
+              {post.frontmatter.title}
+            </a>
+          )
+        })
+      }
+    </div>
+    <img
+      width="60"
+      height="20"
+      style="margin-left: 20px; margin: auto;"
+      src="/Logo_Hermes.webp"
+      alt="url.com=/logo.png"
+    />
+    <img
+      width="60"
+      height="20"
+      style="margin-left: 20px; margin: auto;"
+      src={logoImage}
+      alt="private"
+    />
   </div>
   <style>
     .link {
