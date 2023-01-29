@@ -16,17 +16,16 @@ const { pageTitle, metaDescription } = Astro.props
     <link rel="icon" type="" href="/favicon.svg" />
     <title>Astro Curso | {pageTitle}</title>
   </head>
-  <body> <slot /></body>
+  <body
+    class="container m-auto text-center mt-5 justify-center items-center flex flex-col"
+  >
+    <slot /></body
+  >
   <style>
     body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       font-family: sans-serif;
       font-size: 1.2em;
-      margin: 0 auto;
       background-color: #000;
       color: white;
     }
