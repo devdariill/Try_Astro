@@ -1,0 +1,19 @@
+{
+    "projects": [
+        {
+            "name": "Farm Land 1",
+            "description": "This is a farm land",
+            "image": "images/FingerPrint.svg"
+        },
+        {
+            "name": "Farm Land 2",
+            "description": "This is a farm land",
+            "image": "images/FingerPrint.svg"
+        },
+        {
+            "name": "Farm Land 3",
+            "description": "This is a farm land",
+            "image": "images/FingerPrint.svg"
+        }
+    ]
+}

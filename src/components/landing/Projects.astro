@@ -1,1 +1,20 @@
-<h1>Projects</h1>
+---
+import { projects } from '../../config/projects.json'
+import ButtonAction from '../global/ButtonAction.astro'
+---
+
+<h2 class="font-bold text-5xl my-5 text-center">Projects</h2>
+{
+  projects.map((project) => (
+    <div class="flex flex-col lg:flex-row text-center md:text-left my-10">
+      <div class="flex-1 p-4">
+        <img src={project.image} alt="" class="w-72 mx-auto" />
+      </div>
+      <div class="flex-1">
+        <h3 class="font-bold text-2xl my-4">{project.name}</h3>
+        <p class="my-3">{project.description}</p>
+        <ButtonAction text="More Info" />
+      </div>
+    </div>
+  ))
+}
