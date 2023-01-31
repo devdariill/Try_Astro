@@ -3,18 +3,24 @@ import Layout from '../layouts/Layout.astro'
 const color = 'warning'
 const hobbies = ['Sports', 'Cooking']
 const isActive = false
+import Logo from '../Images/Logo_Hermes.webp'
 ---
 
 <Layout metaDescription="Home" metaTitle="Home">
   <h1 class={color}>Home Page</h1>
-  {
-    hobbies.map((hobby) => (
-      <>
-        <li>{hobby}</li>
-        <button> Like </button>
-      </>
-    ))
-  }
+  <div class="flex">
+    <img src={Logo} alt="" class="flex-1" />
+    <div class="flex-1">
+      {
+        hobbies.map((hobby) => (
+          <>
+            <li>{hobby}</li>
+            <button> Like </button>
+          </>
+        ))
+      }
+    </div>
+  </div>
   <h3>{hobbies[0]}</h3>
   <h4 class="danger">{isActive ? 'User Active' : 'User Deactivate'}</h4>
 </Layout>
