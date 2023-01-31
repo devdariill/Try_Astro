@@ -1,3 +1,8 @@
 pnpm create astro@latest
-pnpm  astro add react 
 pnpm astro add tailwind
+pnpm astro add react 
+    astrojs/prefetch // execute code backned and show it
+    astrojs/sitemap // SEO
+pnpm add react-toastify
+    import { ToastContainer, toast } from 'react-toastify'
+    import 'react-toastify/dist/ReactToastify.css'
