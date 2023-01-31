@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const posts = await Astro.glob('./posts/*.md')
+---
+
+<Layout metaDescription="Blog" metaTitle="Blog">
+  <h1>Blog</h1>
+  <div class="gap-y-5">
+    {
+      posts.map((post) => {
+        return (
+          <div class="bg-zinc-500 text-black block p-2 my-5 rounded-md text-center">
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </div>
+        )
+      })
+    }
+  </div>
+</Layout>
+<!-- {
+    frontmatter: [Getter],
+    file: [Getter],
+    url: [Getter],
+    rawContent: [Getter],
+    compiledContent: [Getter],
+    getHeadings: [Getter],
+    Content: [Getter],
+    default: [AsyncFunction: Content] { [Symbol(astro.needsHeadRendering)]: false },
+    [Symbol(Symbol.toStringTag)]: 'Module'
+  } -->

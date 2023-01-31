@@ -1,11 +1,11 @@
 ---
-import Layout from '../styles/Layout.css'
+import Layout from '../layouts/Layout.astro'
 const color = 'warning'
 const hobbies = ['Sports', 'Cooking']
 const isActive = false
 ---
 
-<Layout>
+<Layout metaDescription="Home" metaTitle="Home">
   <h1 class={color}>Home Page</h1>
   {
     hobbies.map((hobby) => (

@@ -1,14 +1,20 @@
 ---
 import '../styles/Layout.css'
+interface Props {
+  metaTitle: string
+  metaDescription: string
+}
+const { metaTitle, metaDescription } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astro Landing</title>
+    <meta name="description" content={metaDescription} />
+    <title>Astro Landing | {metaTitle}</title>
   </head>
   <body class="container mx-auto gap-y-10 mt-5"> <slot /></body>
 </html>
