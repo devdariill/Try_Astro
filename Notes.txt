@@ -6,3 +6,7 @@ pnpm astro add react
 pnpm add react-toastify
     import { ToastContainer, toast } from 'react-toastify'
     import 'react-toastify/dist/ReactToastify.css'
+
+pnpm install --save-dev prettier prettier-plugin-astro
+
+pnpm install
