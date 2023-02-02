@@ -1,0 +1,50 @@
+src/content/config.ts
+==============================Default
+    // 1. Import utilities from `astro:content`
+    import { defineCollection } from 'astro:content';
+    // 2. Define your collection(s)
+    const blogCollection = defineCollection({ /* ... */ });
+    // 3. Export a single `collections` object to register your collection(s)
+    //    This key should match your collection directory name in "src/content"
+    export const collections = {
+    'blog': blogCollection,
+    };
+==============================Manual
+    // 1. Import utilities from `astro:content`
+    import { z, defineCollection } from 'astro:content'
+    // 2. Define your collection(s)
+    const postsCollection = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        // tags: z.array(z.string()),
+        publishe: z.boolean(),
+    }),
+    })
+    // 3. Export a single `collections` object to register your collection(s)
+    //    This key should match your collection directory name in "src/content"
+    export const collections = {
+    blog: postsCollection,
+    }
+==============================Options
+    defineCollection({
+    schema: z.object({
+        isDraft: z.boolean(),
+        title: z.string(),
+        sortOrder: z.number(),
+        image: z.object({
+        src: z.string(),
+        alt: z.string(),
+        }),
+        author: z.string().default('Anonymous'),
+        language: z.enum(['en', 'es']),
+        tags: z.array(z.string()),
+        // An optional frontmatter property. Very common!
+        footnote: z.string().optional(),
+        // Convert a standard date-string into a `Date` object
+        publishDate: z.string().transform(str => new Date(str)),
+        // Advanced: Validate that the string is also an email
+        authorContact: z.string().email(),
+        // Advanced: Validate that the string is also a URL
+        canonicalURL: z.string().url(),
+    })
+    })
