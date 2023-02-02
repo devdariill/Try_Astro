@@ -5,7 +5,7 @@ const postsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     // tags: z.array(z.string()),
-    publishe: z.boolean(),
+    published: z.boolean(),
   }),
 })
 // 3. Export a single `collections` object to register your collection(s)
