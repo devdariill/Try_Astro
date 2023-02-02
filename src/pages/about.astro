@@ -10,12 +10,12 @@ const blogEntries = await getCollection('posts')
     {
       blogEntries.map((blogPostEntry) => (
         <li>
-          <a href={`/my-blog-url/${blogPostEntry.slug}`}>
+          <a href={`/posts/${blogPostEntry.slug}`}>
+            {blogPostEntry.id}
             {blogPostEntry.data.title}
+            {blogPostEntry.slug}
           </a>
-          <time datetime={blogPostEntry.data.publishedDate.toISOString()}>
-            {blogPostEntry.data.publishedDate.toDateString()}
-          </time>
+          <strong>{blogPostEntry.data.published?.toString()}</strong>
         </li>
       ))
     }
