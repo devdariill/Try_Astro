@@ -1,3 +1,5 @@
+Cntrl + P -> Simple Browser : Show
+
 # Astro Starter Kit: Minimal
 
 ```
