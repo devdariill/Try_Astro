@@ -42,3 +42,7 @@ module.exports = {
     // ...
   ],
 }
+
+client:idle // prority: medium -> despeus de cargar toda la pagina, carge este elemento
+client:visible // prority: low -> carga al ser visible en el html
+cliet:media // prority: low
