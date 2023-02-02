@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
-const blogEntries = await getCollection('posts')
+const blogEntries = await getCollection('posts', ({ data }) => {
+  return data.published
+})
+// const blogEntries = await getCollection('posts')
 ---
 
 <Layout metaDescription="About" metaTitle="About">
