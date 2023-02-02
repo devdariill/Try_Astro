@@ -27,7 +27,6 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-toastify: 9.1.1_biqbaboplfbrettd7655fr4n2y
   tailwindcss: 3.2.4
-  typescript: 4.9.5
 
 devDependencies:
   '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
@@ -35,6 +34,7 @@ devDependencies:
   eslint-plugin-astro: 0.23.0_eslint@8.33.0
   prettier: 2.8.3
   prettier-plugin-astro: 0.8.0
+  typescript: 4.9.5
 
 packages:
 
