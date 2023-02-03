@@ -9,5 +9,7 @@ import react from '@astrojs/react'
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: 'http://localhost:3000',
+  site: import.meta.env.DEV
+    ? 'http://localhost:3000'
+    : 'http://dev-ronaaldll.online',
 })
