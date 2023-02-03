@@ -48,3 +48,6 @@ const blogEntries = await getCollection('x');
   ))}
 </ul>
 
+pnpm add @astrojs/rss
+
+pages/rss.xml.js
