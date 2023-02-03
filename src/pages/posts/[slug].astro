@@ -2,7 +2,8 @@
 import Layout from '../../layouts/Layout.astro'
 import { getCollection, CollectionEntry } from 'astro:content'
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts')
+  const blogEntries = await getCollection('posts', ({ data }) => data.published) // only published posts
+  // const blogEntries = await getCollection('posts')
   return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -18,5 +19,8 @@ const { Content } = await entry.render()
 <Layout metaDescription="posts" metaTitle="posts">
   <h1>{entry.data.title}</h1>
   <strong>{entry.data.published}</strong>
+  <time datetime={entry.data.publishedDate.toISOString()}
+    >{entry.data.publishedDate.toISOString()}</time
+  >
   <Content />
 </Layout>
